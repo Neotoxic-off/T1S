@@ -10,13 +10,13 @@ namespace T1S.Models
     {
         public DateTime Timestamp { get; set; } = DateTime.Now;
         public string? Message { get; set; }
-        public LogLevel Level { get; set; } = LogLevel.Info;
+        public LogLevel Level { get; set; } = LogLevel.INFO;
     }
 
     public enum LogLevel
     {
-        Info,
-        Warning,
-        Error
+        INFO,
+        WARN,
+        ERRO
     }
 }

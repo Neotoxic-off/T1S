@@ -17,9 +17,11 @@ namespace T1S.Services
 
         public event Action<Models.LogEntry>? LogAdded;
 
-        private LogService() { }
+        private LogService()
+        {
+        }
 
-        public void Log(string message, Models.LogLevel level = Models.LogLevel.Info)
+        public void Log(string message, Models.LogLevel level = Models.LogLevel.INFO)
         {
             var entry = new Models.LogEntry { Message = message, Level = level };
             App.Current.Dispatcher.Invoke(() =>
