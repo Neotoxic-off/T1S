@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace T1S.Views
+namespace T1S.Views.Tabs
 {
     /// <summary>
     /// Interaction logic for EntropyView.xaml

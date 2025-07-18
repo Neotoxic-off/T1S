@@ -32,10 +32,19 @@ namespace T1S.ViewModels
         }
 
         [RelayCommand]
-        private Task Scan()
+        private void Browse()
         {
             SetFile();
+        }
+
+        [RelayCommand]
+        private Task Scan()
+        {
+            LogService.Instance.Log($"{Logs.LOG_SCAN_STARTED}");
+
             GetAntiDebugWindowsApis();
+
+            LogService.Instance.Log($"{Logs.LOG_SCAN_COMPLETED}");
 
             return Task.CompletedTask;
         }
@@ -47,9 +56,17 @@ namespace T1S.ViewModels
                 "Executable Files (*.exe;*.dll)|*.exe;*.dll|All Files (*.*)|*.*",
                 Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFilesX86)
             );
-            fileDialog.ShowDialog();
+            bool? success = fileDialog.ShowDialog();
 
-            BinaryPath = fileDialog.FileName;
+            if (success == true)
+            {
+                BinaryPath = fileDialog.FileName;
+                LogService.Instance.Log($"{Logs.LOG_BINARY_SET} '{BinaryPath}'");
+            } else
+            {
+                BinaryPath = null;
+                LogService.Instance.Log($"{Logs.LOG_BINARY_NULLED}", Models.LogLevel.WARN);
+            }
         }
 
         private void GetAntiDebugWindowsApis()

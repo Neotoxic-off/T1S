@@ -16,18 +16,18 @@ namespace T1S.Services
     {
         public static ObservableCollection<AntiDebugWindowsApi> Scan(List<string> binaryStrings)
         {
-            List<AntiDebugWindowsApi> detections = new List<AntiDebugWindowsApi>();
+            List<AntiDebugWindowsApi> results = new List<AntiDebugWindowsApi>();
 
-            foreach (string str in binaryStrings)
+            foreach (var api in WindowsAPI.AntiDebugAPI)
             {
-                detections.AddRange(
-                    WindowsAPI.AntiDebugAPI.Where(
-                        api => str.Contains(api?.Name, StringComparison.OrdinalIgnoreCase)
-                    ).ToList()
-                );
+                results.Add(new AntiDebugWindowsApi
+                {
+                    Name = api.Name,
+                    IsPresent = binaryStrings.Any(str => str.Contains(api?.Name, StringComparison.OrdinalIgnoreCase))
+                });
             }
 
-            return new ObservableCollection<AntiDebugWindowsApi>(detections);
+            return new ObservableCollection<AntiDebugWindowsApi>(results);
         }
     }
 }

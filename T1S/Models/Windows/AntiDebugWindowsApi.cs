@@ -9,6 +9,7 @@ namespace T1S.Models.Windows
     public class AntiDebugWindowsApi
     {
         public string? Name { get; set; }
+        public bool? IsPresent { get; set; } = false;
         public string? Description { get; set; }
     }
 }
