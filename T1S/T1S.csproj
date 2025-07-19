@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Tabs\EntropyView.xaml.cs">
+    <Compile Update="Views\Tabs\SectionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

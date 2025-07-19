@@ -14,7 +14,7 @@ namespace T1S.Services
 {
     public static class AntiDebugService
     {
-        public static ObservableCollection<AntiDebugWindowsApi> Scan(List<string> binaryStrings)
+        public static ObservableCollection<AntiDebugWindowsApi> Scan(ObservableCollection<string> binaryStrings)
         {
             List<AntiDebugWindowsApi> results = new List<AntiDebugWindowsApi>();
 

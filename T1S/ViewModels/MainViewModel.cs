@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using T1S.Models.PE;
+using T1S.Models.Scan;
 using T1S.Models.Windows;
 using T1S.Services;
 using T1S.Utils;
@@ -22,10 +24,19 @@ namespace T1S.ViewModels
         private string? _binaryPath;
 
         [ObservableProperty]
-        private ObservableCollection<AntiDebugWindowsApi>? antiDebugWindowsApis;
+        private ObservableCollection<AntiDebugWindowsApi>? _antiDebugWindowsApis;
 
         [ObservableProperty]
-        private Dictionary<string, double>? _entropy;
+        private Sections? _sections = new Sections();
+
+        [ObservableProperty]
+        private ObservableCollection<string>? _strings = new ObservableCollection<string>();
+
+        [ObservableProperty]
+        private PEFile? _peFileScan;
+
+        [ObservableProperty]
+        private StringViewModel stringViewModel = new();
 
         public MainViewModel()
         {
@@ -40,11 +51,16 @@ namespace T1S.ViewModels
         [RelayCommand]
         private Task Scan()
         {
-            LogService.Instance.Log($"{Logs.LOG_SCAN_STARTED}");
+            if (string.IsNullOrEmpty(BinaryPath) == false)
+            {
+                LogService.Instance.Log($"{Logs.LOG_SCAN_STARTED}");
 
-            GetAntiDebugWindowsApis();
+                LoadPE();
+                LoadStrings();
+                GetAntiDebugWindowsApis();
 
-            LogService.Instance.Log($"{Logs.LOG_SCAN_COMPLETED}");
+                LogService.Instance.Log($"{Logs.LOG_SCAN_COMPLETED}");
+            }
 
             return Task.CompletedTask;
         }
@@ -69,18 +85,21 @@ namespace T1S.ViewModels
             }
         }
 
+        private void LoadStrings()
+        {
+            Strings = StringService.Extract(BinaryPath);
+            StringViewModel.SetStrings(Strings);
+        }
+
         private void GetAntiDebugWindowsApis()
         {
-            List<string>? strings = null;
-            Models.PE.PEFile? peFile = null;
+            AntiDebugWindowsApis = AntiDebugService.Scan(Strings);
+        }
 
-            if (BinaryPath != null)
-            {
-                peFile = PEService.Load(BinaryPath);
-                Entropy = Utils.Entropy.GetSectionEntropies(BinaryPath, peFile.Sections);
-                strings = StringService.Extract(BinaryPath);
-                AntiDebugWindowsApis = AntiDebugService.Scan(strings);
-            }
+        private void LoadPE()
+        {
+            PeFileScan = PEService.Load(BinaryPath);
+            Sections = Entropy.GetSectionEntropies(BinaryPath, PeFileScan.Sections);
         }
     }
 }

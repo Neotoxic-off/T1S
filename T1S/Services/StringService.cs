@@ -12,9 +12,9 @@ namespace T1S.Services
 {
     public static class StringService
     {
-        public static List<string> Extract(string path)
+        public static ObservableCollection<string> Extract(string path)
         {
-            List<string> result = new List<string>();
+            ObservableCollection<string> result = new ObservableCollection<string>();
             const int bufferSize = 4096;
             byte[] buffer = new byte[bufferSize];
             int bytesRead;
@@ -31,7 +31,7 @@ namespace T1S.Services
                     {
                         utf8Builder.Append((char)buffer[i]);
                     }
-                    else if (utf8Builder.Length >= 4)
+                    else if (utf8Builder.Length >= 8)
                     {
                         result.Add(utf8Builder.ToString());
                         utf8Builder.Clear();

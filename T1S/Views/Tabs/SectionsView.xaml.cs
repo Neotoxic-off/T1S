@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace T1S.Views.Tabs
 {
     /// <summary>
-    /// Interaction logic for EntropyView.xaml
+    /// Interaction logic for SectionsView.xaml
     /// </summary>
-    public partial class EntropyView : UserControl
+    public partial class SectionsView : UserControl
     {
-        public EntropyView()
+        public SectionsView()
         {
             InitializeComponent();
         }

@@ -19,18 +19,6 @@
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
-        <TabControl Grid.Row="0">
-            <TabItem Header="Anti-Debug">
-                <tabs:AntiDebugView/>
-            </TabItem>
-            <TabItem Header="Entropy">
-                <tabs:EntropyView/>
-            </TabItem>
-            <TabItem Header="Logs">
-                <tabs:LogsView/>
-            </TabItem>
-        </TabControl>
-
         <GroupBox Grid.Row="1" Header="Assembly">
             <Grid Grid.Row="1" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -44,5 +32,20 @@
                 <Button Grid.Column="2" Content="Scan" Command="{Binding ScanCommand}" Height="25" Margin="10,0,20,0"/>
             </Grid>
         </GroupBox>
+
+        <TabControl Grid.Row="0">
+            <TabItem Header="Anti-Debug">
+                <tabs:AntiDebugView/>
+            </TabItem>
+            <TabItem Header="Sections">
+                <tabs:SectionsView/>
+            </TabItem>
+            <TabItem Header="Strings">
+                <tabs:StringsView/>
+            </TabItem>
+            <TabItem Header="Logs">
+                <tabs:LogsView/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

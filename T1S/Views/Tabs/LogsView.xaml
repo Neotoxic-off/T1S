@@ -28,7 +28,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" Text="{Binding Level}" Foreground="White" FontWeight="Bold" Background="{Binding Level, Converter={StaticResource LogsConverter}}"/>
+                            <TextBlock Grid.Column="0" Text="{Binding Level}" FontWeight="Bold" Foreground="{Binding Level, Converter={StaticResource LogsConverter}}"/>
                             <TextBlock Grid.Column="1" Margin="30,0,0,0" Text="{Binding Message}"/>
                         </Grid>
                     </DataTemplate>
