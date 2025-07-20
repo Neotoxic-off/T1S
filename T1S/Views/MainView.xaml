@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:T1S.Views"
              xmlns:tabs="clr-namespace:T1S.Views.Tabs"
-             xmlns:vm="clr-namespace:T1S.ViewModels" 
+             xmlns:pe="clr-namespace:T1S.Views.Tabs.PE"
+             xmlns:vm="clr-namespace:T1S.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -15,12 +16,14 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="1" Header="Assembly">
-            <Grid Grid.Row="1" VerticalAlignment="Center">
+        <GroupBox Grid.Row="0" Header="Assembly">
+            <Grid VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="150"/>
@@ -33,19 +36,28 @@
             </Grid>
         </GroupBox>
 
-        <TabControl Grid.Row="0">
-            <TabItem Header="Anti-Debug">
-                <tabs:AntiDebugView/>
-            </TabItem>
-            <TabItem Header="Sections">
-                <tabs:SectionsView/>
-            </TabItem>
-            <TabItem Header="Strings">
-                <tabs:StringsView/>
-            </TabItem>
-            <TabItem Header="Logs">
-                <tabs:LogsView/>
-            </TabItem>
-        </TabControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TabControl Grid.Column="0">
+                <TabItem Header="Anti-Debug">
+                    <tabs:AntiDebugView/>
+                </TabItem>
+                <TabItem Header="Strings">
+                    <tabs:StringsView/>
+                </TabItem>
+            </TabControl>
+
+            <pe:PEView Grid.Column="1"/>
+        </Grid>
+
+        <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" ShowsPreview="True"/>
+
+        <GroupBox Grid.Row="3" Header="Logs">
+            <tabs:LogsView/>
+        </GroupBox>
     </Grid>
 </UserControl>

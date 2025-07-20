@@ -27,7 +27,15 @@ namespace T1S.Services
                 throw new InvalidDataException("Invalid PE file");
 
             // === COFF Header ===
-            reader.BaseStream.Seek(2, SeekOrigin.Current); // Skip Machine
+            ushort machine = reader.ReadUInt16();
+            file.Machine = machine switch
+            {
+                0x014c => PEFile.Architecture.x86,
+                0x8664 => PEFile.Architecture.x64,
+                0x01c4 => PEFile.Architecture.ARM,
+                0x01c2 => PEFile.Architecture.ARM64,
+                _ => PEFile.Architecture.Unknown
+            };
             file.NumberOfSections = reader.ReadUInt16();
             file.TimeDateStamp = reader.ReadUInt32();
             reader.BaseStream.Seek(12, SeekOrigin.Current); // Skip rest

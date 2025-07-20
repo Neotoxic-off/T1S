@@ -13,7 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Tabs\SectionsView.xaml.cs">
+    <Compile Update="Views\Tabs\PE\PEAboutView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Tabs\PE\PEView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Tabs\PE\SectionsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

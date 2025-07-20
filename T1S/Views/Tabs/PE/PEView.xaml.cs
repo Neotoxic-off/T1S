@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace T1S.Views.Tabs
+namespace T1S.Views.Tabs.PE
 {
     /// <summary>
-    /// Interaction logic for SectionsView.xaml
+    /// Interaction logic for PEView.xaml
     /// </summary>
-    public partial class SectionsView : UserControl
+    public partial class PEView : UserControl
     {
-        public SectionsView()
+        public PEView()
         {
             InitializeComponent();
         }
