@@ -23,5 +23,6 @@ namespace T1S.Models.PE
         public Architecture Machine { get; set; } = Architecture.Unknown;
         public byte[] OptionalHeader { get; set; } = Array.Empty<byte>();
         public List<PESection> Sections { get; set; } = new();
+        public DOSHeader DOSHeader { get; set; } = new DOSHeader();
     }
 }

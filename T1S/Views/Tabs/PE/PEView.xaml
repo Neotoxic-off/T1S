@@ -8,8 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <TabControl>
-        <TabItem Header="About">
+        <TabItem Header="PE">
             <local:PEAboutView/>
+        </TabItem>
+        <TabItem Header="DOS">
+            <local:DOSView/>
         </TabItem>
         <TabItem Header="Sections">
             <local:SectionsView/>

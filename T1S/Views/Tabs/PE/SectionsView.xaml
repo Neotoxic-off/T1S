@@ -11,58 +11,138 @@
     <TabControl>
         <TabItem Header=".text">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.text.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.text.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".bss">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.bss.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.bss.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".rdata">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.rdata.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.rdata.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".edata">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.text.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.edata.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".idata">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.idata.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.idata.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".reloc">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.reloc.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.reloc.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".rsrc">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.rsrc.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Sections.rsrc.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
         <TabItem Header=".tls">
             <Grid>
-                <StackPanel>
-                    <TextBlock Text="{Binding Sections.tls.Entropy, StringFormat=F2}"/>
-                </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" Content="Entropy:"/>
+                <TextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"  FontWeight="Bold" Text="{Binding Sections.tls.Entropy, StringFormat=F2}" Foreground="DarkOrange" IsReadOnly="True"/>
             </Grid>
         </TabItem>
     </TabControl>

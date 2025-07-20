@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="T1S.Views.Tabs.PE.DOSView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:T1S.Views.Tabs.PE"
+             xmlns:vm="clr-namespace:T1S.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"  Grid.Column="0" Content="e_magic:" FontWeight="Bold"/>
+            <TextBox Grid.Row="0"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_magic, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="1"  Grid.Column="0" Content="e_cblp:" FontWeight="Bold"/>
+            <TextBox Grid.Row="1"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_cblp, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="2"  Grid.Column="0" Content="e_cp:" FontWeight="Bold"/>
+            <TextBox Grid.Row="2"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_cp, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="3"  Grid.Column="0" Content="e_cparhdr:" FontWeight="Bold"/>
+            <TextBox Grid.Row="3"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_cparhdr, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="4"  Grid.Column="0" Content="e_minalloc:" FontWeight="Bold"/>
+            <TextBox Grid.Row="4"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_minalloc, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="5"  Grid.Column="0" Content="e_maxalloc:" FontWeight="Bold"/>
+            <TextBox Grid.Row="5"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_maxalloc, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="6"  Grid.Column="0" Content="e_ss:" FontWeight="Bold"/>
+            <TextBox Grid.Row="6"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_ss, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="7"  Grid.Column="0" Content="e_sp:" FontWeight="Bold"/>
+            <TextBox Grid.Row="7"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_sp, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="8"  Grid.Column="0" Content="e_csum:" FontWeight="Bold"/>
+            <TextBox Grid.Row="8"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_csum, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="9"  Grid.Column="0" Content="e_ip:" FontWeight="Bold"/>
+            <TextBox Grid.Row="9"  Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_ip, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="10" Grid.Column="0" Content="e_cs:" FontWeight="Bold"/>
+            <TextBox Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_cs, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="11" Grid.Column="0" Content="e_lfarlc:" FontWeight="Bold"/>
+            <TextBox Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_lfarlc, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="12" Grid.Column="0" Content="e_ovno:" FontWeight="Bold"/>
+            <TextBox Grid.Row="12" Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_ovno, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="13" Grid.Column="0" Content="e_oemid:" FontWeight="Bold"/>
+            <TextBox Grid.Row="13" Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_oemid, StringFormat='0x{0:X4}'}" Foreground="DarkOrange"/>
+
+            <Label Grid.Row="14" Grid.Column="0" Content="e_lfanew:" FontWeight="Bold"/>
+            <TextBox Grid.Row="14" Grid.Column="1" VerticalAlignment="Center" Text="{Binding PeFileScan.DOSHeader.e_lfanew, StringFormat='0x{0:X8}'}" Foreground="DarkOrange"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
